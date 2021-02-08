@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js 계산기</title>
+    <style>
+      p,
+      input {
+        font-family: monospace;
+      }
+      p {
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 앱의 DOM 앵커입니다. -->
+    <div id="app">
+      <!-- 애플리케이션 입력 양식입니다. -->
+      <p>x <input v-model="x" /></p>
+      <p>y <input v-model="y" /></p>
+      <p>---------------------</p>
+      <!-- 이 <span> 태그에서 결괏값을 보여 줍니다. -->
+      <p>= <span v-text="result"></span></p>
+    </div>
+
+    <!-- Vue.js 라이브러리를 사용할 수 있는 <script> 태그입니다. -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+      function isNotNumericValue(value) {
+        return isNaN(value) || !isFinite(value);
+      }
+      // 앱을 초기화합니다.
+      var calc = new Vue({
+        // DOM에 연결합니다.
+        el: "#app",
+        // 앱에 추가된 변수들입니다.
+        data: { x: 0, y: 0, lastResult: 0 },
+        // computed 속성을 사용하여 여기서 계산됩니다.
+        computed: {
+          result: function () {
+            let x = parseFloat(this.x);
+            if (isNotNumericValue(x)) return this.lastResult;
+            let y = parseFloat(this.y);
+            if (isNotNumericValue(y)) return this.lastResult;
+
+            this.lastResult = x + y;
+
+            return this.lastResult;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
