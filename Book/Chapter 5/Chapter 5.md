@@ -58,3 +58,19 @@ Axios는 웹 브라우저와 Node.js를 위한 약속 기반의 HTTP 클라이�
 - update-can-add-cart.html
 - update-add-cart.js
 - update-inventory.html
+
+## 5.3 레코드 정렬
+
+- add-in-sort.html
+- sort-products-comp.js
+
+## 5.4 연습 문제
+
+## 5.5 요약
+
+- Vue의 조건부는 v-if, v-else-if, v-else 지시자를 사용하여 생성한다.
+- v-for 지시자는 매우 다재다능하다.  
+  양의 정수, 배열 요소 혹은 객체 속성 값과 키를 순환하면서 HTML 마크업, Vue 템플릿 혹은 Vue 컴포넌를 복제할 수 있다.
+- 계산된 속성을 이용하여 쉽게 값들을 정렬할 수 있다.  
+  계산된 속성을 v-for 지시자와 함께 사용해서 결과를 정렬할 수 있다.
+
