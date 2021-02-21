@@ -4,6 +4,7 @@ import Form from '@/components/Form'
 import Main from '@/components/Main'
 import Product from '@/components/Product'
 import EditProduct from '@/components/EditProduct'
+
 Vue.use(Router)
 
 export default new Router({
@@ -13,7 +14,7 @@ export default new Router({
       path: '/',
       name: 'iMain',
       component: Main,
-      props: true,
+      props: true
     },
     {
       path: '/form',
@@ -22,8 +23,22 @@ export default new Router({
       props: true
     },
     {
-      path: "*",
-      redirect: "/"
+      path: '/product/:id',
+      name: 'Id',
+      component: Product,
+      props: true,
+      children: [
+          {
+              path: 'edit',
+              name: 'Edit',
+              component: EditProduct,
+              props: true
+          }
+      ]
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 })
