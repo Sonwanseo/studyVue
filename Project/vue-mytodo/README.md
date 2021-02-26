@@ -1,6 +1,24 @@
 # vue-mytodo
 
-Vue todolist
+## Project setup
+```
+yarn install
+```
 
-3시간 동안 구글링만 하다 포기했다..  
-예제 더 공부하고 다시 도전해야겠다
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
